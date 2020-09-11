@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="title">Ethereum ETH</p>
+
+<form oninput=calculate_ethereum(this)>
+
+    <input type="number" id="a" value="0">
+    <input type="checkbox" id="classic">
+    <p id="output">USD: 0$</p>
+</form>
+
+<script>
+    function calculate_ethereum(form) {
+        bony = document.getElementById("title")
+        if (is_classic)
+            bony.innerHTML = "Ethereum classic ETC"
+        else
+            bony.innerHTML = "Ethereum ETH"
+        var given_ethereums = form.elements[0].value
+        var is_classic = form.elements[1].checked
+        var rate = "{{rate}}"
+        bony = document.getElementById("title")
+        if (is_classic)
+            bony.innerHTML = "Ethereum classic ETC"
+        else
+            bony.innerHTML = "Ethereum ETH"
+        if (is_classic)
+            rate = "{{rate_classic}}"
+        console.log(is_classic)
+        console.log("{{rate}}")
+        const calculated_price = given_ethereums * rate
+        console.log(calculated_price, given_ethereums, rate)
+        body = document.getElementById("output")
+        body.innerHTML = "USD: " + calculated_price + " $"
+    }
+</script>
+</body>
+</html>
